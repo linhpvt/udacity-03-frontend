@@ -64,7 +64,7 @@ export class ApiService {
     return new Promise ( resolve => {
         this.http.request(req).subscribe((resp) => {
         if (resp && resp.type === HttpEventType.Response && (<any> resp).status && (<any> resp).status === 200) {
-          resolve(this.post(endpoint, payload));
+          resolve(this.post(`${endpoint}/`, payload));
         }
       });
     });
